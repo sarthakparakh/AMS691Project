@@ -286,6 +286,15 @@ def university_dashboard():
     return render_template('university_dashboard.html', students = student_data, username=username)
 
 
+
+def get_final_score(username):
+    with open('data/rank/rank.json', 'r') as rank_file:
+        rankings = json.load(rank_file)
+    for student in rankings:
+        if student["name"] == username:
+            return student["final_score"]
+    return None  # Return None if the username is not found
+
 @app.route('/university_student_rank', methods=['GET'])
 def university_dashboard_rank():
     if 'user_type' not in session or session['user_type'] != 'university':
@@ -308,7 +317,8 @@ def university_dashboard_rank():
             'cgpa': student[8],
             'gre': student[9],
             'toefl': student[10],
-            'rank_score': rankings.get(student[1], None),
+            #'rank_score': rankings.get(student[1], None),
+            'rank_score': get_final_score(student[1])
             # 'calculated_json': {
             #     'cgpa_weighted': float(student[8]) * 0.3,  # Example calculation
             #     'gre_weighted': float(student[9]) * 0.4,    # Example calculation

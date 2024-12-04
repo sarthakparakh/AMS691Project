@@ -44,10 +44,13 @@ def save_response_to_json(response: str, filename: str):
     Parse the string response, extract the JSON part, and save it to a JSON file.
     """
     try:
-        start_index = response.find("{")  # Find the starting index of the JSON part
-        end_index = response.find("}") + 1
+        #print("response  =", response)
+        start_index = response.find("```")+8  # Find the starting index of the JSON part
+        end_index = response.rfind("```")
 
+        #print(start_index, end_index)
         json_str = response[start_index:end_index].strip()
+        #print("json_str =", json_str)
 
         # Parse the JSON string into a dictionary
         parsed_json = json.loads(json_str)
@@ -110,16 +113,18 @@ def rank():
                 0.05*Credibility_of_recommender + 0.05*Future_potential + 0.05*Character_traits
 
     Return the response in three parts-
-    First, the json format with the student name as the key and final score as value and sort the json key value pairs in descending order of the score value.
-    Second, show the individual category scores for each student.
-    Third, compare and explain the ranking of each student. Explaination for each student should 
-    be less than 200 words.
-    
+    For each student, in a nested jsons provide three key, values or jsons.
+    First, the json format with the 'final_score' as the key and final score as value.
+    Second, store the individual category scores for each student with key 'score_breakdown'.
+    Third, for each student explain the ranking of that student compared to the other students 
+    while highlighting the keywords from the student profiles. Explaination for each student should be less than 200 words.
+    Finally sort the students in descending order of their final score in the json response.
+
     Other things to remember:
         If some keys are missing, try to find relevant information from the data only, otherwise assign 
         0 value to such keys during calculation.
 
-        Please do not add comments in the response as it is a JSON format response.
+        Please do not add ''' comments in the response as it is a JSON format response.
 
         For all the values, return only the final value after performing all the calculations.
     """
