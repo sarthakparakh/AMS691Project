@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Submission</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: #2c3e50;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .form-label {
+            font-weight: bold;
+            color: #34495e;
+        }
+        .btn-primary {
+            background-color: #3498db;
+            border-color: #3498db;
+        }
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+        .footer {
+            background-color: #34495e;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 30px;
+            border-radius: 8px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <!--img src="https://via.placeholder.com/30" alt="Logo"> <!-- Placeholder for logo -->
+            <span>Admit AI</span>
+        </div>
+        <div>
+            <div>Welcome, {{ username }}  
+                <a href="/login">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Submit Your Application</h1>
+
+        <form action="/student" method="POST" enctype="multipart/form-data">
+
+            <div class="mb-3">
+                <label for="cgpa" class="form-label">CGPA (out of 10):</label>
+                <input type="number" step="0.01" class="form-control" name="cgpa" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="gre" class="form-label">GRE Score (out of 340):</label>
+                <input type="number" class="form-control" name="gre" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="toefl" class="form-label">TOEFL Score (out of 120):</label>
+                <input type="number" class="form-control" name="toefl" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="sop" class="form-label">SOP:</label>
+                <input type="file" class="form-control" name="sop" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="lor1" class="form-label">Letter of Recommendation 1:</label>
+                <input type="file" class="form-control" name="lor1" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="lor2" class="form-label">Letter of Recommendation 2:</label>
+                <input type="file" class="form-control" name="lor2" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="lor3" class="form-label">Letter of Recommendation 3:</label>
+                <input type="file" class="form-control" name="lor3" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="resume" class="form-label">Resume:</label>
+                <input type="file" class="form-control" name="resume" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit Application</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>Developed by Sarthak, Kushagra, Tanvi - AdmissionNER</p>
+    </div>
+
+    <!-- Bootstrap JS (for interactive components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Login Form Styling */
+        .form-container {
+            width: 400px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 60px auto; /* Adds spacing from the navbar */
+        }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        .form-container select,
+        .form-container input[type="text"],
+        .form-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .form-container input:focus,
+        .form-container select:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-container button:hover {
+            background: #0056b3;
+        }
+        .form-container p {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://via.placeholder.com/30" alt="Logo"> <!-- Placeholder for logo -->
+            <span>Admit AI</span>
+        </div>
+        <div>
+            <a href="/signup">Sign Up</a>
+            <a href="/login">Login</a>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-container">
+        <h1>Login</h1>
+        <form id="loginForm" method="POST" action="/login">
+            <label for="user_type">I am a:</label>
+            <select id="user_type" name="user_type" required>
+                <option value="" disabled selected>Select User Type</option>
+                <option value="student">Student</option>
+                <option value="university">University</option>
+            </select>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            <div class="error" id="passwordError"></div>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/signup">Sign up here</a></p>
+    </div>
+
+    <!--script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission for validation
+
+            const password = document.getElementById('password').value;
+            const passwordError = document.getElementById('passwordError');
+
+            // Password validation: At least 8 characters, one number, one special character
+            const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/;
+
+            if (!passwordRegex.test(password)) {
+                passwordError.textContent = "Password must be at least 8 characters long and include a number and a special character.";
+                return;
+            } else {
+                passwordError.textContent = ""; // Clear error
+                window.location.href = '/student';
+                //alert('Login successful!');
+                //window.location.href = '/student';
+                // Form submission can be triggered here:
+                // this.submit();
+            }
+        });
+    </script-->
+</body>
+</html>
