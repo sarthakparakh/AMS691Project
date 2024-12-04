@@ -1,0 +1,78 @@
+{
+    "CGPA": 9.58,
+    "Education_degree_experience": "Bachelor's",
+    "Previous_degree_major": "Computer Engineering",
+    "Total_number_of_years_of_IT_Industry_experience": 1.0,
+    "Total_Number_of_certifications": 6,
+    "Technical_skills": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Computer Vision",
+        "Data Analysis",
+        "Cloud Computing",
+        "C",
+        "C++",
+        "Java",
+        "Python",
+        "SQL",
+        "MongoDB",
+        "HTML",
+        "JavaScript",
+        "Node.js",
+        "TensorFlow",
+        "Scikit-learn",
+        "OpenCV",
+        "MATLAB",
+        "Jupyter Notebook",
+        "Tableau",
+        "Flutter",
+        "Git",
+        "Linux"
+    ],
+    "Extra-curricular_activities": [
+        "Won the 2021 College Hackathon",
+        "Technical team leader at College's Google Developer Student Club",
+        "Volunteered at National Security Service Club",
+        "Served as a Head boy and Discipline In-charge during school days",
+        "Personal hobbies include playing table tennis, learning French, and working out"
+    ],
+    "Awards_and_recognition": [
+        "Won the 2021 College Hackathon"
+    ],
+    "Achievements": 3,
+    "Leadership_experience": 3,
+    "Degree_fit": "Computer Science",
+    "Clarity_and_coherence": 8.5,
+    "Relevance_to_Computer_Science_program": 9.0,
+    "Personal_motivation": "Yes",
+    "Clear_Short-term_and_Long-term_goals": "Yes",
+    "Conclusion_and_final_impressions": "Positive",
+    "Leadership_skills": [
+        "Team leadership",
+        "Project leadership",
+        "Discipline In-charge"
+    ],
+    "Achievement_while_working_with_professor": [
+        "Published a paper in the International Journal of Research and Analytical Reviews"
+    ],
+    "Character_traits": [
+        "Ambitious",
+        "Curious",
+        "Diligent",
+        "Emotionally mature",
+        "Versatile",
+        "Adaptable"
+    ],
+    "Credibility_of_recommender": [
+        "Chief Scientist",
+        "Assistant Professor",
+        "Head of Department"
+    ],
+    "LOR_match_with_SOP_and_Resume": "Yes",
+    "Future_potential": "Yes",
+    "Length_of_relationship_with_recommender": [
+        "1 year",
+        "4 years",
+        "4 years"
+    ]
+}

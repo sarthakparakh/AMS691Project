@@ -99,7 +99,8 @@
                     <th>CGPA</th>
                     <th>GRE Score</th>
                     <th>TOEFL Score</th>
-                    <th>Calculated JSON</th>
+                    <th>Rank Score</th>
+                    <th>Profile Summary</th>
                 </tr>
             </thead>
             <tbody>
@@ -109,8 +110,11 @@
                     <td>{{ student.cgpa }}</td>
                     <td>{{ student.gre }}</td>
                     <td>{{ student.toefl }}</td>
+                    <td>{{ student.rank_score }}</td>
                     <td>
-                        <pre>{{ student.calculated_json | tojson }}</pre>
+                        <pre style="white-space: pre-wrap; word-wrap: break-word;">
+                            <code>{{ student.response | tojson }}</code>
+                        </pre>
                     </td>
                 </tr>
                 {% endfor %}

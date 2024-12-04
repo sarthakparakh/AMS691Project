@@ -7,12 +7,16 @@ import sqlite3
 import hashlib
 from werkzeug.utils import secure_filename
 from PyPDF2 import PdfMerger
+from rag.chat import process_student_profiles 
+from ranking.rank import rank
+import json
 # Initialize Flask app
 app = Flask(__name__)
 
 # Configuration for file uploads
 UPLOAD_FOLDER = 'uploads'
-COMBINED_FOLDER = 'combined'
+#COMBINED_FOLDER = 'combined'
+COMBINED_FOLDER = 'data/student_profiles'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(COMBINED_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -192,7 +196,7 @@ def student_dashboard():
 
                 print("Valid 3")
                 # Combine files into a single PDF
-                combined_filename = f"combined_{student_name}.pdf"
+                combined_filename = f"AMS_691_{student_name}_docs.pdf"
                 combined_path = os.path.join(app.config['COMBINED_FOLDER'], combined_filename)
                 merger = PdfMerger()
                 for filepath in [sop_filename, lor1_filename, lor2_filename, lor3_filename, resume_filename]:
@@ -238,12 +242,16 @@ def student_dashboard():
                     'final_score': final_score,
                     'combined_filename': combined_filename
                 }
+                folder_path = 'data/student_profiles/'  # Path to the folder containing student profiles
+                document_path = os.path.join(folder_path, combined_filename)
+                process_student_profiles(document_path)
                 return render_template('student_upload_success.html', student=student)
 
-    return render_template('student_dashboard.html')
+    return render_template('student_dashboard.html', username=username)
 # Route for university dashboard (view all students)
 @app.route('/university', methods=['GET'])
 def university_dashboard():
+    username = session.get('username')
     if 'user_type' not in session or session['user_type'] != 'university':
         return redirect(url_for('index'))
     
@@ -275,7 +283,7 @@ def university_dashboard():
     #sorted_students = sorted(students_data, key=lambda x: x['final_score'], reverse=True)
 
     #return render_template('university_dashboard.html', students=sorted_students)
-    return render_template('university_dashboard.html', students = student_data)
+    return render_template('university_dashboard.html', students = student_data, username=username)
 
 
 @app.route('/university_student_rank', methods=['GET'])
@@ -283,8 +291,10 @@ def university_dashboard_rank():
     if 'user_type' not in session or session['user_type'] != 'university':
         return redirect(url_for('index'))
     
+    rank()
     #conn = sqlite3.connect(DB_NAME)
-    
+    with open('data/rank/rank.json', 'r') as rank_file:
+        rankings = json.load(rank_file)
     #conn = get_db_connection()
     conn = sqlite3.connect(DB_NAME)
     students = conn.execute('SELECT * FROM student_submissions').fetchall()
@@ -298,20 +308,42 @@ def university_dashboard_rank():
             'cgpa': student[8],
             'gre': student[9],
             'toefl': student[10],
-            'calculated_json': {
-                'cgpa_weighted': float(student[8]) * 0.3,  # Example calculation
-                'gre_weighted': float(student[9]) * 0.4,    # Example calculation
-                'toefl_weighted': float(student[10]) * 0.3,  # Example calculation
-                'total_score': (float(student[8]) * 0.3) + (float(student[9]) * 0.4) + (float(student[10]) * 0.3)  # Example total score calculation
-            }
+            'rank_score': rankings.get(student[1], None),
+            # 'calculated_json': {
+            #     'cgpa_weighted': float(student[8]) * 0.3,  # Example calculation
+            #     'gre_weighted': float(student[9]) * 0.4,    # Example calculation
+            #     'toefl_weighted': float(student[10]) * 0.3,  # Example calculation
+            #     'total_score': (float(student[8]) * 0.3) + (float(student[9]) * 0.4) + (float(student[10]) * 0.3)  # Example total score calculation
+            # }
+            
         }
+        response_path = os.path.join('data/response/', f"{student[1]}.json")
+        if os.path.exists(response_path):
+            with open(response_path, 'r') as response_file:
+                response_data = json.load(response_file)
+                student_info['response'] = response_data
+        else:
+            print(f"Response file not found for username: {student[1]}")
+            student_info['response'] = None
+
+        # Append the enriched student data
+        #student_data.append(student_info)
+
+        
         student_data.append(student_info)
 
     # Sort students by final score (rank list)
     #sorted_students = sorted(students_data, key=lambda x: x['final_score'], reverse=True)
+    print("Student Data =", student_data)
+    #sorted_students = sorted(student_data, key=lambda x: x.get('rank_score', 0), reverse=True)
+    sorted_students = sorted(
+    student_data,
+    key=lambda x: x.get('rank_score') if x.get('rank_score') is not None else 0,
+    reverse=True
+)
 
     #return render_template('university_dashboard.html', students=sorted_students)
-    return render_template('university_student_rank.html', students = student_data)
+    return render_template('university_student_rank.html', students = sorted_students)
 
 # Function to analyze SOP (basic analysis based on text length)
 
@@ -359,6 +391,7 @@ def signup():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     print("Log in..")
+    username = ""
     if request.method == 'POST':
         print("Loggiii in..")
         username = request.form['username']
@@ -392,7 +425,8 @@ def login():
             print("Ptani")
             flash("Invalid username or password.", "error")
             #return redirect('/login')
-    return render_template('login.html')
+    print("username",username)
+    return render_template('login.html', username=username)
 
 
 def analyze_sop(sop_filename):

@@ -83,7 +83,7 @@
             <span>Admit AI</span>
         </div>
         <div>
-            <div>Welcome, {{ username }}  
+            <div>Welcome {{ username }}  
                 <a href="/login">Logout</a>
             </div>
         </div>
@@ -99,7 +99,7 @@
                     <th>CGPA</th>
                     <th>GRE Score</th>
                     <th>TOEFL Score</th>
-                    <th>Calculated JSON</th>
+                    <!--th>Calculated JSON</th-->
                 </tr>
             </thead>
             <tbody>
@@ -109,9 +109,9 @@
                     <td>{{ student.cgpa }}</td>
                     <td>{{ student.gre }}</td>
                     <td>{{ student.toefl }}</td>
-                    <td>
+                    <!--td>
                         <pre>{{ student.calculated_json | tojson }}</pre>
-                    </td>
+                    </td-->
                 </tr>
                 {% endfor %}
             </tbody>

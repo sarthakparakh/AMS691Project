@@ -1,0 +1,71 @@
+{
+    "CGPA": 3.6,
+    "Education_degree_experience": [
+        "Bachelor's",
+        "Master's"
+    ],
+    "Previous_degree_major": "Computer Science and Engineering",
+    "Total_number_of_years_of_IT_Industry_experience": 2.5,
+    "Total_Number_of_certifications_present": 4,
+    "Technical_skills": [
+        "SQL",
+        "Python",
+        "JavaScript",
+        "C++",
+        "C",
+        "HTML5",
+        "CSS",
+        "BigQuery",
+        "MYSQL",
+        "PostgreSQL",
+        "Neo4j",
+        "Snowflake",
+        "Terraform",
+        "Tableau",
+        "Power BI",
+        "Lucid Charts",
+        "GCP",
+        "Apache Airflow",
+        "Azure",
+        "GIT",
+        "Postman",
+        "REST APIs"
+    ],
+    "Extra-curricular_activities": [
+        "Volunteering"
+    ],
+    "Awards_and_recognition": [
+        "DDAT Intern Innovation Challenge"
+    ],
+    "Achievements": 7,
+    "Number_of_times_led_teams_or_projects": 3,
+    "Degree_fit": "Computer Science",
+    "Clarity_and_coherence": 8.5,
+    "Relevance_to_Computer_Science_program": 9.0,
+    "Personal_motivation": "Yes",
+    "Clear_Short-term_and_Long-term_goals": "Yes",
+    "Conclusion_and_final_impressions": "Positive",
+    "Leadership_skills": [
+        "Team management",
+        "Project management"
+    ],
+    "Achievement_while_working_with_professor": [
+        "IMDB Data Analysis"
+    ],
+    "Character_traits": [
+        "Intelligent",
+        "Enthusiastic",
+        "Conscientious",
+        "Respectful"
+    ],
+    "Credibility_of_recommender": [
+        "Associate Professor",
+        "Project Manager"
+    ],
+    "LOR_match_with_SOP_and_Resume": "Yes",
+    "Future_potential": "Yes",
+    "Length_of_relationship_with_recommender": [
+        "5 years",
+        "2 years"
+    ]
+}
