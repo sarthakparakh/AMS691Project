@@ -287,18 +287,32 @@ def university_dashboard():
 
 
 
+# def get_final_score(username):
+#     with open('data/rank/rank.json', 'r') as rank_file:
+#         rankings = json.load(rank_file)
+#     for student in rankings:
+#         if student["name"] == username:
+#             return student["final_score"]
+#     return None  # Return None if the username is not found
+
 def get_final_score(username):
     with open('data/rank/rank.json', 'r') as rank_file:
-        rankings = json.load(rank_file)
-    for student in rankings:
-        if student["name"] == username:
-            return student["final_score"]
-    return None  # Return None if the username is not found
+        data = json.load(rank_file)  # Load the entire JSON object
+    
+    # Access the "students" key to get the list of students
+    if "students" in data and isinstance(data["students"], list):
+        for student in data["students"]:  # Iterate over the students list inside the "students" key
+            if student["name"] == username:
+                return student["final_score"]
+    else:
+        print("Error: 'students' is not a valid list.")
+    
+    return None
 
 @app.route('/university_student_rank', methods=['GET'])
 def university_dashboard_rank():
     if 'user_type' not in session or session['user_type'] != 'university':
-        return redirect(url_for('index'))
+        return redirect(url_for('login'))
     
     rank()
     #conn = sqlite3.connect(DB_NAME)

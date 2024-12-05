@@ -11,67 +11,124 @@
     <!-- Custom CSS -->
     <style>
         body {
-            background-color: #f7f7f7;
-            font-family: Arial, sans-serif;
+            background-color: #f1f1f1; /* Light background for the body */
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #344966, #98bcec);
+            background: url('https://emarsys.com/app/uploads/2020/03/real-ai.jpg') no-repeat center center fixed, 
+                linear-gradient(135deg, #344966, #98bcec);
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+            /* animation: gradientBackground 8s ease infinite alternate; */
+        
         }
+        @keyframes gradientBackground {
+            0% {
+                background: linear-gradient(135deg, #344966, #98bcec);
+            }
+            /* 100% {
+                background: linear-gradient(135deg, #6a11cb, #2575fc);
+            } */
+        }
+
         h1 {
             text-align: center;
             margin-top: 30px;
-            color: #2c3e50;
+            color: #2c3e50; /* Darker color for the heading */
         }
+
         .container {
-            background-color: #fff;
+            background-color: #ffffff; /* White background for the form */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
+            width: 100%;
+    max-width: 600px; 
         }
+
         .form-label {
             font-weight: bold;
-            color: #34495e;
+            color: #010003; /* Dark gray color for labels */
         }
+
         .btn-primary {
-            background-color: #3498db;
-            border-color: #3498db;
+            background-color: #003366; /* Blue color for the button */
+            border-color: #003366;
         }
+
         .btn-primary:hover {
-            background-color: #2980b9;
+            background-color: #2980b9; /* Darker blue for hover effect */
             border-color: #2980b9;
         }
+
         .footer {
-            background-color: #34495e;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            margin-top: 30px;
-            border-radius: 8px;
-        }
+    background-color: #003366; /* Dark footer background */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 8px;
+    position: relative; /* Required for movement */
+    overflow: hidden; /* Hide any overflow caused by movement */
+}
+
+/* Scrolling animation for the footer text */
+.footer p {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollLeftToRight 10s linear infinite; /* Apply scrolling animation */
+}
+
+/* Define the scrolling animation */
+@keyframes scrollLeftToRight {
+    0% {
+        transform: translateX(-100%); /* Start off-screen to the left */
+    }
+    100% {
+        transform: translateX(100%); /* Move to off-screen to the right */
+    }
+}
+
+
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background-color: #007BFF;
+            background-color: #003366; /* Dark navbar background */
             color: white;
         }
+
         .navbar .logo {
             display: flex;
             align-items: center;
         }
+
         .navbar .logo img {
             width: 30px;
             height: 30px;
             margin-right: 10px;
         }
+
         .navbar a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
             font-size: 16px;
         }
+
         .navbar a:hover {
             text-decoration: underline;
         }
+
+        .form-control {
+            border-color: #ccc; /* Light border for input fields */
+        }
+
+        .form-control:focus {
+            border-color: #3498db; /* Blue border on focus */
+            outline: none;
+        }
+
     </style>
 </head>
 <body>
@@ -79,7 +136,7 @@
     <!-- Navbar -->
     <div class="navbar">
         <div class="logo">
-            <!--img src="https://via.placeholder.com/30" alt="Logo"> <!-- Placeholder for logo -->
+            <img src="https://cdn.mos.cms.futurecdn.net/VFLt5vHV7aCoLrLGjP9Qwm.jpg" alt="Logo"> 
             <span>Admit AI</span>
         </div>
         <div>
@@ -139,6 +196,7 @@
         </form>
     </div>
 
+    <!-- Footer -->
     <div class="footer">
         <p>Developed by Sarthak, Kushagra, Tanvi - AdmissionNER</p>
     </div>

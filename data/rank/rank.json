@@ -1,5 +1,62 @@
-{
-    "kushagraaa": 8.33,
-    "sarthaaaaaaaak": 8.23,
-    "tanvi": 7.83
-}
+[
+    {
+        "Student_name": "kushagraaa",
+        "final_score": 8.33,
+        "score_breakdown": {
+            "GRE": 0,
+            "IELTS": 0,
+            "GPA": 1.44,
+            "YOE": 0.1,
+            "Number_of_certifications": 0.3,
+            "Extra_curricular_score": 0.25,
+            "Awards&Recognition": 0.075,
+            "Leadership_Score": 0.15,
+            "Clarity_and_coherence": 0.0425,
+            "Relevance_to_Computer_Science_program": 0.045,
+            "Credibility_of_recommender": 0.05,
+            "Future_potential": 0.05,
+            "Character_traits": 0.05
+        },
+        "Ranking": "Kushagraaa ranks 1st among the three students. He has a strong profile with a high CGPA of 9.58 and 6 certifications. His technical skills are impressive, with expertise in AI, ML, and Data Analysis. He has also won the 2021 College Hackathon and has leadership experience as a team leader and discipline in-charge."
+    },
+    {
+        "Student_name": "sarthaaaaaaaak",
+        "final_score": 8.23,
+        "score_breakdown": {
+            "GRE": 0,
+            "IELTS": 0,
+            "GPA": 1.33,
+            "YOE": 0.25,
+            "Number_of_certifications": 0.4,
+            "Extra_curricular_score": 0.25,
+            "Awards&Recognition": 0.375,
+            "Leadership_Score": 0.15,
+            "Clarity_and_coherence": 0.0425,
+            "Relevance_to_Computer_Science_program": 0.0475,
+            "Credibility_of_recommender": 0.05,
+            "Future_potential": 0.05,
+            "Character_traits": 0.04
+        },
+        "Ranking": "Sarthaaaaaaaak ranks 2nd among the three students. He has a strong profile with a CGPA of 8.89 and 8 certifications. He has won several awards, including the National Innovation Contest 2020 and has leadership experience as a team manager and project manager."
+    },
+    {
+        "Student_name": "tanvi",
+        "final_score": 7.58,
+        "score_breakdown": {
+            "GRE": 0,
+            "IELTS": 0,
+            "GPA": 0.54,
+            "YOE": 0.25,
+            "Number_of_certifications": 0.2,
+            "Extra_curricular_score": 0.05,
+            "Awards&Recognition": 0.0375,
+            "Leadership_Score": 0.1,
+            "Clarity_and_coherence": 0.0425,
+            "Relevance_to_Computer_Science_program": 0.045,
+            "Credibility_of_recommender": 0.05,
+            "Future_potential": 0.05,
+            "Character_traits": 0.04
+        },
+        "Ranking": "Tanvi ranks 3rd among the three students. She has a relatively weaker profile compared to the other two students, with a lower CGPA of 3.6. However, she has some impressive technical skills, including expertise in SQL, Python, and JavaScript."
+    }
+]
