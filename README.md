@@ -104,7 +104,7 @@ The database will be created with the table `student_submissions` to store stude
 
 4. Access the application in your browser at:
    ```
-   http://127.0.0.1:5000/
+   http://127.0.0.1:5000/signup
    ```
 
 ---
