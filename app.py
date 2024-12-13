@@ -25,7 +25,7 @@ app.config['COMBINED_FOLDER'] = COMBINED_FOLDER
 ALLOWED_EXTENSIONS = {'pdf'}
 
 # SQLite database setup
-DB_NAME = 'students.db'
+DB_NAME = 'ams691.db'
 
 # Secret key for session management
 app.secret_key = os.urandom(24)
@@ -149,7 +149,7 @@ def student_dashboard():
 
     if 'user_type' not in session or session['user_type'] != 'student':
         print("something wrong")
-        return redirect(url_for('index'))
+        return redirect(url_for('login'))
 
     if request.method == 'POST':
         # File uploads
@@ -289,16 +289,17 @@ def university_dashboard():
 
 def get_final_score(username):
     with open('data/rank/rank.json', 'r') as rank_file:
-        rankings = json.load(rank_file)
-    for student in rankings:
+        data = json.load(rank_file)
+    for student in data:
         if student["name"] == username:
             return student["final_score"]
     return None  # Return None if the username is not found
 
+
 @app.route('/university_student_rank', methods=['GET'])
 def university_dashboard_rank():
     if 'user_type' not in session or session['user_type'] != 'university':
-        return redirect(url_for('index'))
+        return redirect(url_for('login'))
     
     rank()
     #conn = sqlite3.connect(DB_NAME)

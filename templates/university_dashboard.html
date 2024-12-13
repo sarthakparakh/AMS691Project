@@ -9,7 +9,13 @@
         body {
             background-color: #f7f7f7;
             font-family: Arial, sans-serif;
+            background: url('https://emarsys.com/app/uploads/2020/03/real-ai.jpg') no-repeat center center fixed, 
+                linear-gradient(135deg, #344966, #98bcec);
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+            /* animation: gradientBackground 8s ease infinite alternate; */
         }
+      
+
         h1 {
             text-align: center;
             margin-top: 30px;
@@ -21,18 +27,28 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
+            
+            max-width: 600px; 
         }
         .form-label {
             font-weight: bold;
             color: #34495e;
         }
         .btn-primary {
-            background-color: #3498db;
-            border-color: #3498db;
+            background-color: #003366; /* Set the background color to #003366 */
+            border-color: #003366; /* Set the border color to match the background */
+            padding: 12px;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
         .btn-primary:hover {
-            background-color: #2980b9;
-            border-color: #2980b9;
+            background-color: #005b99; /* Lighter shade of #003366 when hovered */
+            border-color: #005b99;
+            transform: scale(1.05);
         }
         .footer {
             background-color: #34495e;
@@ -47,7 +63,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background-color: #007BFF;
+            background-color: #003366;
             color: white;
         }
         .navbar .logo {
@@ -80,6 +96,7 @@
     <div class="navbar">
         <div class="logo">
             <!--img src="https://via.placeholder.com/30" alt="Logo"> <!-- Placeholder for logo -->
+            <img src="https://cdn.mos.cms.futurecdn.net/VFLt5vHV7aCoLrLGjP9Qwm.jpg" alt="Logo"> 
             <span>Admit AI</span>
         </div>
         <div>

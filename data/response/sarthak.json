@@ -12,7 +12,6 @@
         "Java",
         "HTML5",
         "JavaScript",
-        "CSS",
         "Bootstrap",
         "Spring",
         "Django",
@@ -44,6 +43,7 @@
         "Won a trip to Singapore & chance to participate in International Start-up Enrichment Tour in a problem-solving competition at IIT Indore",
         "Won 1st prize in Agile based software development 2019 in CSE Dept."
     ],
+    "Awards_and_recognition_count": 5,
     "Achievements": 5,
     "Leadership_experience": 3,
     "Degree_fit": "Computer Science",
@@ -51,12 +51,12 @@
     "Relevance_to_Computer_Science_program": 9.5,
     "Personal_motivation": "Yes",
     "Clear_Short-term_and_Long-term_goals": "Yes",
-    "Conclusion_and_final_impressions": "Strong candidate with excellent technical skills and leadership experience",
+    "Conclusion_and_final_impressions": "Positive",
     "Leadership_skills": [
         "Team management",
         "Project management",
-        "Communication",
-        "Problem-solving"
+        "Time management",
+        "Communication skills"
     ],
     "Achievement_while_working_with_professor": [],
     "Character_traits": [
@@ -66,7 +66,7 @@
         "Team player"
     ],
     "Credibility_of_recommender": "Architect",
-    "LOR_matches_with_SOP_and_Resume": "Yes",
+    "LOR_match_with_SOP_and_Resume": "Yes",
     "Future_potential": "Yes",
     "Length_of_relationship_with_recommender": "More than 1 year"
 }

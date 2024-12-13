@@ -29,7 +29,7 @@ def create_chat_groq_model():
         model_name="llama-3.1-70b-versatile",  # Specify the model name (e.g., "gpt-3.5-turbo" or similar)
         temperature=0,  # Adjust temperature if needed
         max_tokens=700,  # Adjust max tokens for your use case
-        groq_api_key = "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"
+        groq_api_key = "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"
     )
 
 def create_local_llm() -> BaseLanguageModel:

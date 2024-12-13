@@ -6,98 +6,209 @@
     <title>Login</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background: url('https://emarsys.com/app/uploads/2020/03/real-ai.jpg') no-repeat center center fixed, 
+                linear-gradient(135deg, #344966, #98bcec);
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* animation: gradientBackground 8s ease infinite alternate; */
         }
+
+        @keyframes gradientBackground {
+            0% {
+                background: linear-gradient(135deg, #344966, #98bcec);
+            }
+            /* 100% {
+                background: linear-gradient(135deg, #6a11cb, #2575fc);
+            } */
+        }
+
         /* Navbar Styling */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-            background-color: #007BFF;
+            padding: 15px 30px;
+            background-color: #003366;
             color: white;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            animation: navbarAnimation 1s ease-out;
         }
+
+        @keyframes navbarAnimation {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .navbar .logo {
             display: flex;
             align-items: center;
         }
+
         .navbar .logo img {
             width: 30px;
             height: 30px;
             margin-right: 10px;
         }
+
         .navbar a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
             font-size: 16px;
+            transition: color 0.3s ease;
         }
+
         .navbar a:hover {
+            color: #ffd700;
             text-decoration: underline;
         }
 
         /* Login Form Styling */
         .form-container {
-            width: 400px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 60px auto; /* Adds spacing from the navbar */
+            width: 100%;
+            max-width: 400px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            animation: formSlideIn 1s ease-out;
         }
+
+        @keyframes formSlideIn {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
         .form-container h1 {
             text-align: center;
             margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+            animation: fadeIn 2s ease-out;
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         .form-container label {
             display: block;
             margin: 10px 0 5px;
             font-weight: bold;
         }
+
         .form-container select,
         .form-container input[type="text"],
         .form-container input[type="password"] {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
+            padding: 12px;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 6px;
             box-sizing: border-box;
             font-size: 14px;
+            transition: border-color 0.3s ease, transform 0.3s ease;
         }
+
         .form-container input:focus,
         .form-container select:focus {
-            border-color: #007BFF;
+            border-color: #003366;
             outline: none;
+            transform: scale(1.05);
         }
+
         .form-container button {
             width: 100%;
-            padding: 10px;
-            background: #007BFF;
+            padding: 14px;
+            background: #003366;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
         .form-container button:hover {
-            background: #0056b3;
+            background: #005b99;
+            transform: scale(1.05);
         }
+
         .form-container p {
             text-align: center;
-            margin-top: 15px;
+            margin-top: 20px;
             font-size: 14px;
+            color: #555;
+        }
+
+        .form-container p a {
+            color: #003366;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .form-container p a:hover {
+            color: #005b99;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        /* Button hover animation */
+        .form-container button {
+            animation: buttonHover 1s infinite alternate;
+        }
+
+        @keyframes buttonHover {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
+
     <!-- Navbar -->
     <div class="navbar">
         <div class="logo">
-            <img src="https://via.placeholder.com/30" alt="Logo"> <!-- Placeholder for logo -->
+            <img src="https://cdn.mos.cms.futurecdn.net/VFLt5vHV7aCoLrLGjP9Qwm.jpg" alt="Logo"> <!-- Placeholder for logo -->
             <span>Admit AI</span>
         </div>
         <div>
@@ -129,28 +240,5 @@
         <p>Don't have an account? <a href="/signup">Sign up here</a></p>
     </div>
 
-    <!--script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission for validation
-
-            const password = document.getElementById('password').value;
-            const passwordError = document.getElementById('passwordError');
-
-            // Password validation: At least 8 characters, one number, one special character
-            const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/;
-
-            if (!passwordRegex.test(password)) {
-                passwordError.textContent = "Password must be at least 8 characters long and include a number and a special character.";
-                return;
-            } else {
-                passwordError.textContent = ""; // Clear error
-                window.location.href = '/student';
-                //alert('Login successful!');
-                //window.location.href = '/student';
-                // Form submission can be triggered here:
-                // this.submit();
-            }
-        });
-    </script-->
 </body>
 </html>

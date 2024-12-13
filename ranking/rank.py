@@ -13,8 +13,8 @@ def create_chat_groq_model():
     return ChatGroq(
         model_name="llama-3.1-70b-versatile",
         temperature=0,
-        max_tokens=1000,
-        groq_api_key = "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"
+        max_tokens=3000,
+        groq_api_key = "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"
     )
 
 

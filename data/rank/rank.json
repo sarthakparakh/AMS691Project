@@ -1,5 +1,42 @@
-{
-    "kushagraaa": 8.33,
-    "sarthaaaaaaaak": 8.23,
-    "tanvi": 7.83
-}
+[
+    {
+        "name": "kushagra",
+        "final_score": 8.33,
+        "score_breakdown": {
+            "GRE": 0,
+            "IELTS": 0,
+            "GPA": 1.437,
+            "YOE": 0.1,
+            "Number_of_certifications": 0.3,
+            "Extra_curricular_score": 0.25,
+            "Awards&Recognition": 0.3,
+            "Leadership_Score": 0.25,
+            "Clarity_and_coherence": 0.425,
+            "Relevance_to_Computer_Science_program": 0.45,
+            "Credibility_of_recommender": 0.25,
+            "Future_potential": 0.25,
+            "Character_traits": 0.5
+        },
+        "ranking": "Kushagra ranks 1st among the two students. He has a strong profile with a high CGPA of 9.58 and a good number of technical skills. He has also won several awards and has a good leadership experience. His clarity and coherence, relevance to computer science program, and credibility of recommender are also high."
+    },
+    {
+        "name": "sarthak",
+        "final_score": 8.23,
+        "score_breakdown": {
+            "GRE": 0,
+            "IELTS": 0,
+            "GPA": 1.3335,
+            "YOE": 0.25,
+            "Number_of_certifications": 0.4,
+            "Extra_curricular_score": 0.25,
+            "Awards&Recognition": 0.75,
+            "Leadership_Score": 0.25,
+            "Clarity_and_coherence": 0.425,
+            "Relevance_to_Computer_Science_program": 0.475,
+            "Credibility_of_recommender": 0.05,
+            "Future_potential": 0.25,
+            "Character_traits": 0.2
+        },
+        "ranking": "Sarthak ranks 2nd among the two students. He has a good profile with a CGPA of 8.89 and a good number of technical skills. He has also won several awards and has a good leadership experience. However, his credibility of recommender is lower compared to Kushagra."
+    }
+]
